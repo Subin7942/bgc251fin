@@ -9,7 +9,11 @@ function setup() {
     false
   );
   Scroll.init();
-  Title.init('냥', '신수빈', '2025');
+  Title.init(
+    '키스의 고유 조건은 입술끼리 만나야 하고 특별한 기술은 필요치 않다',
+    '손우성',
+    '2025'
+  );
   References.init([
     {
       title: 'What was Coding like 40 years ago?',
