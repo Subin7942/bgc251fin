@@ -30,11 +30,7 @@
 
       // ∨○○○○ [수정 필수] ○○○○∨
       // 작품 제목, 본인 성명, 작품 공개 연도
-      new P5Template.Title(
-        '키스의 고유 조건은 입술끼리 만나야 하고 특별한 기술은 필요치 않다',
-        '손우성',
-        '2025'
-      );
+      new P5Template.Title('나 자신과의 싸움', '신수빈', '2025');
       // 참고자료 목록
       const references = [
         {
@@ -59,6 +55,20 @@
           year: '2015',
           publisher: '한빛미디어',
         },
+        {
+          title: 'Enormous Impossibility Drive [v1.1]',
+          authors: ['Wren Durbano'],
+          year: '2020',
+          publisher: 'OpenProcessing',
+          url: 'https://openprocessing.org/sketch/930371',
+        },
+        {
+          title: 'make a game with p5.js part 2',
+          authors: ['Mr. Ward'],
+          year: '2022',
+          publisher: 'Coding with Mr Ward - YouTube',
+          url: 'https://youtu.be/IUbEGcvZYJQ?si=xc1vTfnB6BvD56ed',
+        },
       ];
       // ∧○○○○ [수정 필수] ○○○○∧
 
@@ -70,10 +80,10 @@
     <!-- p5.js 라이브러리 로딩 -->
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/p5.js"></script>
     <!-- 본인 스케치 로딩 -->
-    <script src="./sketches/hero.js" defer></script>
-    <script src="./sketches/bullet.js" defer></script>
-    <script src="./sketches/enemy.js" defer></script>
-    <script src="./sketches/star.js" defer></script>
+    <script src="./sketches/hero.js"></script>
+    <script src="./sketches/bullet.js"></script>
+    <script src="./sketches/enemy.js"></script>
+    <script src="./sketches/star.js"></script>
     <script src="./sketches/sketch.js" defer></script>
     <!-- ∧○○○○ [수정 필수] ○○○○∧ -->
   </head>
