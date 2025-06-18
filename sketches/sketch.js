@@ -1,3 +1,5 @@
+const { Responsive } = P5Template;
+
 let video;
 let pixelSize = 6;
 let videoSize = 40;
@@ -13,7 +15,7 @@ let heroHp = 50;
 let damage = false;
 
 function setup() {
-  createCanvas(800, 600);
+  new Responsive().createResponsiveCanvas(800, 600, 'contain', true);
   // 비디오 만들고 크기 조정 뒤 없애기(나중에 픽셀로 재현)
   video = createCapture(VIDEO, { flipped: true });
   video.size(videoSize, videoSize);
