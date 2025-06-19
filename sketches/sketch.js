@@ -1,17 +1,17 @@
 const { Responsive } = P5Template;
 
 let video;
-let pixelSize = 6;
-let videoSize = 40;
+let pixelSize = 2;
+let videoSize = 70;
 let hitDetected = false;
 // 괴물이 총알에 맞았는지 여부 기억하는 변수 false면 총알에 맞지 않은 상태이고 true면 총알에 맞음
 let attackNum = 0;
-let Hp = 25;
+let Hp = 30;
 let stars = [];
 let starCount = 100;
 let enemies = [];
-let enemyCount = 15;
-let heroHp = 50;
+let enemyCount = 13;
+let heroHp = 40;
 let damage = false;
 
 function setup() {
@@ -34,11 +34,12 @@ function setup() {
   }
   // 적 여러 개 생성
   for (let idxE = 0; idxE < enemyCount; idxE++) {
-    let x = random(width);
+    let x = random(width - 100, width);
     let y = random(height);
-    let speed = random(10, 15);
+    let speed = random(5, 20);
+    let size = random(15, 30);
     let e = Object.create(enemy);
-    e.makeEnemy(x, y, speed);
+    e.makeEnemy(x, y, speed, size);
     enemies.push(e);
   }
 }
@@ -135,7 +136,7 @@ function draw() {
   textSize(15);
   textAlign(LEFT, CENTER);
   text("Hero's Hp", 10, 30);
-  let heroHpIdx = map(heroHp, 0, 50, 0, spaceX - 100);
+  let heroHpIdx = map(heroHp, 0, 40, 0, spaceX - 100);
   fill('orange');
   rect(10, 10, heroHpIdx, 10);
   stroke('white');

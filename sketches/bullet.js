@@ -7,7 +7,8 @@ let bullet = {
     this.position.x += this.speed;
   },
   render: function () {
-    noStroke();
+    stroke('white');
+    strokeWeight(2);
     fill('yellow');
     ellipse(this.position.x, this.position.y, 10, 10);
   },
