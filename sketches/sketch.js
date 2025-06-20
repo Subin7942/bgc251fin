@@ -1,9 +1,9 @@
 const { Responsive } = P5Template;
 
 let video;
-let pixelSize = 2;
-let videoSize = 70;
-let hitDetected = false;
+let pixelSize = 5;
+let videoSize = 40;
+let hit = false;
 // 괴물이 총알에 맞았는지 여부 기억하는 변수 false면 총알에 맞지 않은 상태이고 true면 총알에 맞음
 let attackNum = 0;
 let Hp = 30;
@@ -47,8 +47,6 @@ function setup() {
 function draw() {
   // 비디오의 픽셀 정보 불러오기
   video.loadPixels();
-  // console.log(video);
-  // console.log(video.pixels.length);
 
   background('black');
 
@@ -183,7 +181,7 @@ function draw() {
       hitThisFrame = true;
     }
     // 괴물이 총알에 맞고 빨갛게 타격 효과 생김
-    if (hitDetected || hitThisFrame) {
+    if (hit || hitThisFrame) {
       fill(r, 0, 0, a);
     } else {
       fill(r, g, b, a);
@@ -196,14 +194,14 @@ function draw() {
 
   // 괴물이 총알에 맞았다는 것을 인식하고 공격횟수가 오른 뒤 총알에 맞은 사실을 기억한다, 기억을 하기 전에만 공격횟수가 오르고 기억한 이후에는 오르지 않게 해 한 프레임 당 총알이 지나가며 인식된 횟수만큼 공격횟수가 여러번 오르는 것을 방지한다
   // 이렇게 하지 않으면 한 프레임 당 총알이 지나가며 총을 한 번 쏜 것과 상관없이 hitThisFrame이 인지한 만큼 공격 횟수가 오르게 된다
-  if (hitThisFrame && !hitDetected) {
+  if (hitThisFrame && !hit) {
     attackNum++;
-    hitDetected = true;
+    hit = true;
   }
 
   // 총알이 완전히 지나가면 공격 사실을 잊음, 다시 프레임에서 공격 여부를 판단 후 기억해야 함
   if (bullet.position.x > width) {
-    hitDetected = false;
+    hit = false;
   }
 }
 
